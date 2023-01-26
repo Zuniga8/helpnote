@@ -1,0 +1,67 @@
+
+input[type=radio] {
+    display: none;
+}
+input[type=checkbox] {
+    display: none;
+}
+
+
+
+ul {
+    list-style: none;
+    width: 240px;
+    margin: 0;
+    padding: 0;
+    position: relative
+  }
+   
+  .n1 {
+    padding: 0;
+  }
+  
+  ul li ul li { 
+    background-color: #fff;
+  }
+  
+  .open {
+    padding: 5px;
+    width: 240px;
+    
+  }
+  
+  ul li ul {
+    display: none;
+    position: absolute;
+    
+  }
+  
+  ul label:hover~ul {
+    display: block;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+  }
+  
+  li ul:hover {
+    display: block; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* n3 */
+  .menu {
+    border: solid 6px red;
+    height: 240px;
+    overflow-y: auto; 
+    
+  }
+  ::-webkit-scrollbar {
+    display: none;
+    }
+  
+  ul li input:checked~label {
+    background-color: rgb(187, 187, 201);
+  }
+/*      fim badleads*/  
