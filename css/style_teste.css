@@ -1,0 +1,139 @@
+* {}
+
+body {
+    width: 280px;
+    height: 580px;
+}
+
+.form2 {}
+
+input[type=checkbox] {
+    display: none;
+}
+
+/*      Select sub status   */
+.select-box {
+    display: flex;
+    width: 220px;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.select-box .options-container {
+    background: #ffffff;
+    max-height: 0;
+    width: 220px;
+    opacity: 0;
+    transition: all 0.4s;
+    border: 1px solid #ced4da;
+    border-radius: 7px;
+    overflow: hidden;
+    position: absolute;
+    order: 1;
+}
+
+.selected {
+    background: #ffffff;
+    border-radius: 7px;
+    position: relative;
+    border: 1px solid #ced4da;
+    order: 0;
+}
+
+.option>label {
+    width: 200px;
+}
+
+.select-box .options-container.active {
+    max-height: 220px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+    width: 0;
+    border-radius: 7px;
+}
+
+.select-box .option,
+.selected {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+    background: #bec5cf;
+
+    position: relative;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+ 
+.txt_label label{
+    width: 200px;
+}
+
+/*          BadLeads        revisar depois */
+
+ul {
+    list-style: none;
+    width: 220px;
+    margin: 0;
+    padding: 0;
+    position: relative
+  }
+   
+  .n1 {
+    padding: 0;
+  }
+  
+  ul li ul li { 
+    background-color: #fff;
+    overflow: hidden;
+
+  }
+  
+  .open {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  ul li ul {
+    display: none;
+    position: absolute;
+  
+  }
+  
+  ul label:hover~ul {
+    display: block;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+  }
+  
+  li ul:hover {
+    display: block; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* n3 */
+  .menu {
+    border: solid 5px red;
+    height: 220px;
+    overflow-y: auto;
+    
+  }
+   
+  
+  ul li input:checked~label {
+    background-color: rgb(187, 187, 201);
+  }
+/*      fim badleads*/  
