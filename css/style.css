@@ -1,3 +1,7 @@
+*{
+  background-color: rgb(117, 114, 114);
+  color: #fff;
+}
 
 input[type=radio] {
     display: none;
@@ -57,7 +61,7 @@ ul {
     overflow-y: auto; 
     
   }
-  ::-webkit-scrollbar {
+  .menu::-webkit-scrollbar {
     display: none;
     }
   
@@ -65,3 +69,28 @@ ul {
     background-color: rgb(187, 187, 201);
   }
 /*      fim badleads*/  
+
+/*  scrool  */
+div.row{
+  width: 100%;
+}
+.Note{
+  height: 680px;
+  width: 100%;
+  overflow-y: auto;  
+}
+.quadro{
+  height: 700px;
+  width: 920px;
+}
+.iconMenu2{
+  width: 25px;
+  height: 25px;
+  padding:0;
+  margin: 0;
+
+}
+.iconMenu{ 
+  padding-left: 0px;
+  padding-right: 0px;
+}

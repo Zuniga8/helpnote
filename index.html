@@ -11,6 +11,7 @@
     <script src="js/bootstrap.bundle.min.js"></script>
 
     <script src="js/bootstrap.bundle.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -21,6 +22,11 @@
     <title>QA Note 2.0</title>
 
 
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            var clipboard = new ClipboardJS('.btn');
+        })
+    </script>
 </head>
 
 <body class="">
@@ -60,129 +66,176 @@
 
                 </div>
             </div>
-            <div class="col-sm-7 border border-dark p-2 m-1 rounded-3" style="width: 818.22222px;height: 618.22222px;">
+            <div class="col-sm-7 border border-dark p-2 m-1 rounded-3 quadro">
                 <div class="opt AddInfo d-none">
                     <h1> Adicionar info</h1>
                 </div>
 
 
                 <div class="opt Note d-none">
-                    <h1> Adicionar Note</h1>
-                    <br>
-                    <form id="formNote">
-
-                        <div class="row"> <!-- Speakeasy ID:-->
-                            <div class="col-sm-3  txt_label me-0 text-end ">
-                                <label> Speakeasy ID:</label>
-                            </div>
-                            <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                <input type="text" class="form-control form-control-sm txttext" id="txt_speak"
-                                    value="" />
-                            </div>
+                    <div class="menuNote row">
+                        <div class=" col-4 fs-2">
+                            Criar Note:
+                        </div>  
+                        
+                        <div class="col-1 p-0 iconMenu">
+                            <button for="" class="btn " type="button" id="checkPreview"  value="checkPreview">
+                                 <img src="icon/iconPreview.png" class="iconMenu2">
+                            </button>
                         </div>
 
-                        <div class="row"> <!-- Sub Status: -->
-                            <div class="col-sm-3  txt_label me-0 text-end ">
-                                <label> Sub Status: </label>
-                            </div>
-                            <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                <select class="form form-control form-control-sm" id="txt_subStatus">
-
-                                </select>
-                            </div>
+                        <div class="col-1 p-0 iconMenu">
+                            <button for="checkPreview" class="btn " type="button" id="CopiarNote"
+                                data-clipboard-action="copy" data-clipboard-target="#note2">
+                                <img src="icon/iconCopy.png" class="iconMenu2">
+                            </button>
                         </div>
 
-                        <div class="row"> <!--Reason/ Comments:-->
-                            <div class="col-sm-3  txt_label me-0 text-end ">
-
-                                <label> Reason/ Comments: </label>
-                            </div>
-                            <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                <input type="text" class="form-control form-control-sm txttext" id="txt_reason"
-                                    value="" />
-                            </div>
+                        <div class="col-1 p-0 iconMenu">
+                            <button class="btn  " type="button" id="limparNote">
+                                <img src="icon/iconClear.png" class="iconMenu2">
+                            </button>
                         </div>
 
-                        <div class="row"> <!-- On Call Comments: -->
-                            <div class="col-sm-3  txt_label me-0 text-end">
-
-                                <label>On Call Comments: </label>
-                            </div>
-                            <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
-                                <textarea class="form-control form-control-sm txtarea" id="txt_oncall" rows="3"
-                                    style="overflow: hidden"></textarea>
-                            </div>
+                        <div class="col-3 pt-0"> <!-- botao script pronto -->
+                            <input list="listaTxtPronto" class="form form-control form-control-sm" name=""
+                                id="txtPronto">
+                            <datalist id="listaTxtPronto"> </datalist>
                         </div>
 
-                        <div class="row"> <!--Tags Implemented:-->
-                            <div class="col-sm-3  txt_label me-0 text-end">
-
-                                <label> Tags Implemented: </label>
-                            </div>
-                            <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
-                                <textarea class="form-control form-control-sm txtarea" id="txt_tagImp" rows="2"
-                                    style="overflow: hidden"></textarea>
-                            </div>
+                        <div class="col-1 p-0 iconMenu">
+                            <button class="btn   " type="button" id="AddTxtPronto">
+                                <img src="icon/iconAddInfo.png" class="iconMenu2">
+                            </button>
                         </div>
 
-                        <div class="row"><!-- Screenshots -->
-                            <div class="col-sm-3  txt_label me-0 text-end ">
-
-                                <label>Screenshots: </label>
-                            </div>
-                            <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
-                                <textarea class="form-control form-control-sm txtarea" id="txt_screen" rows="3"
-                                    style="overflow: hidden"></textarea>
-                            </div>
+                        <div class="col-1 p-0 iconMenu">
+                            <button class="btn   " type="button" id="subTxtPronto">
+                                <img src="icon/iconSub.png" class="iconMenu2">
+                            </button>
                         </div>
+                    </div>
+                    <div class="edit">
+                        <form id="formNote">
 
-                        <div class="row"> <!-- Multiple CIDs: -->
-                            <div class="col-sm-3  txt_label me-0 text-end">
+                            <div class="row"> <!-- Speakeasy ID:-->
+                                <div class="col-sm-3  txt_label me-0 text-end fw-semibold ">
+                                    <label> Speakeasy ID:</label>
+                                </div>
+                                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
+                                    <input type="text" class="form-control form-control-sm txttext" id="txt_speak"
+                                        value="" />
+                                </div>
+                            </div>
 
-                                <label>Multiple CIDs: </label>
+                            <div class="row"> <!-- Sub Status: -->
+                                <div class="col-sm-3  txt_label me-0 text-end ">
+                                    <label> Sub Status: </label>
+                                </div>
+                                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
+                                    <select class="form form-control form-control-sm" id="txt_subStatus" value="">
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
-                                <textarea class="form-control form-control-sm txtarea" id="txt_cids" rows="1"
-                                    style="overflow: hidden"></textarea>
-                            </div>
-                        </div>
 
-                        <div class="row"> <!-- On Call (Call Started) -->
-                            <div class="col-sm-3  txt_label me-0 text-end">
+                            <div class="row"> <!--Reason/ Comments:-->
+                                <div class="col-sm-3  txt_label me-0 text-end ">
 
-                                <label>On Call (Call Started)</label>
+                                    <label> Reason/ Comments: </label>
+                                </div>
+                                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
+                                    <input type="text" class="form-control form-control-sm txttext" id="txt_reason"
+                                        value="" />
+                                </div>
                             </div>
-                            <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
-                                <input type="text" class="form-control form-control-sm" id="txt_oncall2" value=""
-                                    placeholder="signaled on time" />
-                            </div>
-                        </div>
 
-                        <div class="row"> <!-- BAD Leads -->
-                            <div class="col-sm-3  txt_label me-0 text-end ">
-                                <label> *Bad Leads:</label>
+                            <div class="row"> <!-- On Call Comments: -->
+                                <div class="col-sm-3  txt_label me-0 text-end">
+
+                                    <label>On Call Comments: </label>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
+                                    <textarea class="form-control form-control-sm txtarea" id="txt_oncall" rows="3"
+                                        style="overflow: hidden"></textarea>
+                                </div>
                             </div>
-                            <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-0 form9  p-1">
-                                <ul class="border rounded n1">
-                                    <li>
-                                        <label class="open" for="esc">selecione os BadLeads </label>
-                                        <ul class="border n2 menu badLeads rounded-2">
-                                            <!-- 
+
+                            <div class="row"> <!--Tags Implemented:-->
+                                <div class="col-sm-3  txt_label me-0 text-end">
+
+                                    <label> Tags Implemented: </label>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
+                                    <textarea class="form-control form-control-sm txtarea" id="txt_tagImp" rows="2"
+                                        style="overflow: hidden"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row"><!-- Screenshots -->
+                                <div class="col-sm-3  txt_label me-0 text-end ">
+
+                                    <label>Screenshots: </label>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
+                                    <textarea class="form-control form-control-sm txtarea" id="txt_screen" rows="3"
+                                        style="overflow: hidden"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row"> <!-- Multiple CIDs: -->
+                                <div class="col-sm-3  txt_label me-0 text-end">
+
+                                    <label>Multiple CIDs: </label>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
+                                    <textarea class="form-control form-control-sm txtarea" id="txt_cids" rows="1"
+                                        style="overflow: hidden"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row"> <!-- On Call (Call Started) -->
+                                <div class="col-sm-3  txt_label me-0 text-end">
+
+                                    <label>On Call (Call Started)</label>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
+                                    <input type="text" class="form-control form-control-sm" id="txt_oncall2"
+                                        placeholder="signaled on time" />
+                                </div>
+                            </div>
+
+                            <div class="row"> <!-- BAD Leads -->
+                                <div class="col-sm-3  txt_label me-0 text-end ">
+                                    <label> *Bad Leads:</label>
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-0 form9  p-1">
+                                    <ul class="border rounded n1">
+                                        <li>
+                                            <label class="open" for="esc">selecione os BadLeads </label>
+                                            <ul class="border n2 menu badLeads rounded-2">
+                                                <!-- 
                                                 '<li><input type="checkbox" name="menuopt" id="drop' + n + '" ' + bl + '/>' +
                                                 '<label class="open" for="drop' + n + '">' + bl + '</label></li>'
                                             -->
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <!--input type="text" class="form-control form-control-sm" id="txt_data" style="width: 200px" /-->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <!--input type="text" class="form-control form-control-sm" id="txt_data" style="width: 200px" /-->
+                                </div>
                             </div>
-                        </div>
 
-                    </form>
+                        </form>
+                    </div>
+                    <div class="preview d-none">
+                        <div class="container-md clear user-select-all lh-1" id="note2">
+                            <div class="row bg-light border border-dark lbl py-2 col-sm-10 col-md-11 col-xl-8"
+                                id="notePreview"></div>
+                        </div>
+                    </div>
                 </div>
 
 
-                
+
                 <div class="opt Mail d-none">
                     <h1> Adicionar E-mail</h1>
 
