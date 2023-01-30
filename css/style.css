@@ -1,3 +1,7 @@
+*{
+  background-color: rgb(117, 114, 114);
+  color: #fff;
+}
 
 input[type=radio] {
     display: none;
@@ -79,11 +83,14 @@ div.row{
   height: 700px;
   width: 920px;
 }
-.iconMenu{
-  width: 30px;
+.iconMenu2{
+  width: 25px;
   height: 25px;
-  padding:0px
+  padding:0;
+  margin: 0;
 
 }
-.copyNote{ 
+.iconMenu{ 
+  padding-left: 0px;
+  padding-right: 0px;
 }

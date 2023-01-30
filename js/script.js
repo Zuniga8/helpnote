@@ -69,23 +69,19 @@ document.querySelector('#txt_subStatus').innerHTML = recebess
 
 
 // BTN limpar dados 
-/*
-document.querySelector('.limpaform').addEventListener('click', function () {
-    document.querySelector("form").reset();
+document.querySelector('#limparNote').addEventListener('click', function () {
+    form.reset();
     document.querySelector(".lbl").innerHTML = "";
     checkbl = []
-})*/
+})
+
 // Fim BTN limpar dados
-
-//          gera note
-
+ 
 //      btn menu preview
-
 let form = document.querySelector('#formNote')
 let preview = document.querySelector('.preview')
-document.querySelector('.menuNote>div>input[name="option"]#checkPreview').addEventListener('click', function (ch) {
-
-    if (ch.target.checked) {
+document.querySelector('#checkPreview').addEventListener('click', function () {
+    if (preview.classList.contains('d-none')) {
         console.log('ok')
         form.classList.toggle('d-none')
         preview.classList.toggle('d-none')
@@ -95,7 +91,14 @@ document.querySelector('.menuNote>div>input[name="option"]#checkPreview').addEve
         preview.classList.toggle('d-none')
     }
 })
-// gera note
+
+// fim BTN menun previw
+
+document.querySelector('#txt_subStatus').addEventListener('change', function (op) {
+    document.querySelector('#txt_subStatus').setAttribute('value', op.target.value)
+})
+
+//      Gera note
 function GerarNote() {
     console.log('click beranote')
     let imprime = '' + "<p class='pb-0 mb-2 text-break'><span class='fw-bold'>Data </span>" + txt_date + "</p>";
@@ -104,11 +107,9 @@ function GerarNote() {
     form.querySelectorAll('div.row > div> label').forEach(function (lbl, id) {
         let registra = ''
         //console.log(id + '- ' + lbl.innerText)
-        if (id === 1) {
-            opt = document.querySelector('#txt_subStatus').selectedIndex
-            registra = document.querySelectorAll('#txt_subStatus>option')[opt].innerText
-        } else if (id === 4 || id === 5 || id === 6 || id === 3) {
+        if (id > 2 && id < 7) {
             registra = "<br>" + form.querySelectorAll('textarea')[id - 3].value.replaceAll("\n", "<br>");
+            x += 1
         } else if (id == 8) {
             document.querySelectorAll("[name='menuopt']").forEach(function (opt) {
                 if (opt.checked) {
@@ -117,7 +118,7 @@ function GerarNote() {
             })
         }
         else {
-            registra = form.querySelectorAll('input.form-control')[x].value
+            registra = form.querySelectorAll('.form-control')[x].value
             x += 1
         }
 
@@ -130,13 +131,39 @@ function GerarNote() {
     })
     document.querySelector("#notePreview").innerHTML = imprime;
 }
-//          gera note
+//      FIM    gera note
 
-document.querySelector('.copyNote').addEventListener('click', function () {
- 
-    form.classList.toggle('d-none')
-    preview.classList.toggle('d-none')
-    GerarNote()
+
+//       BTN copia
+document.querySelector('#CopiarNote').addEventListener('click', function () {
+    if (preview.classList.contains('d-none') && !form.classList.contains('d-none')) {
+        form.classList.toggle('d-none')
+        preview.classList.toggle('d-none')
+        GerarNote()
+    }
 })
+//       FIM BTN copia
+
+//      lista Txt Pronto
+{
+let optScript = ''
+scriptProntos.forEach(function (opt) {
+  optScript = optScript + '<option value="' + opt.indice + '">'
+})
+document.querySelector('#listaTxtPronto').innerHTML = optScript
+} //      Fim lista Txt Pronto
+
+//      ADD  lista Txt Pronto
+
+
+//      Fim lista Txt Pronto
+
+
+//     SUB  lista Txt Pronto
+
+//      Fim lista Txt Pronto
+
+
+
 
 

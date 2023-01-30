@@ -76,28 +76,44 @@
                     <div class="menuNote row">
                         <div class=" col-4 fs-2">
                             Criar Note:
-                        </div>
-                        <div class="col-1 pt-2">
-                            <input type="checkbox" name="option" id="checkPreview" value="checkPreview">
-                            <label for="checkPreview">
-                                <img src="icon/iconPreview.png" class="iconMenu">
-                            </label>
-                        </div>
-
-                        <div class="col-1 p-0">
-                            <button for="checkPreview" class="btn  copyNote " type="button" id="CopiarNote"
-                                data-clipboard-action="copy" data-clipboard-target="#note2">
-                                <img src="icon/iconCopy.png" class="iconMenu">
+                        </div>  
+                        
+                        <div class="col-1 p-0 iconMenu">
+                            <button for="" class="btn " type="button" id="checkPreview"  value="checkPreview">
+                                 <img src="icon/iconPreview.png" class="iconMenu2">
                             </button>
                         </div>
 
-                        <div class="col-1 pt-2"> <!-- botao script pronto -->
-                            <input type="radio" name="option" id="LimparNote" value="">
-                            <label for="LimparNote">
-                                <img src="icon/32360.png" class="iconMenu">
-                            </label>
+                        <div class="col-1 p-0 iconMenu">
+                            <button for="checkPreview" class="btn " type="button" id="CopiarNote"
+                                data-clipboard-action="copy" data-clipboard-target="#note2">
+                                <img src="icon/iconCopy.png" class="iconMenu2">
+                            </button>
                         </div>
-                        <br><br>
+
+                        <div class="col-1 p-0 iconMenu">
+                            <button class="btn  " type="button" id="limparNote">
+                                <img src="icon/iconClear.png" class="iconMenu2">
+                            </button>
+                        </div>
+
+                        <div class="col-3 pt-0"> <!-- botao script pronto -->
+                            <input list="listaTxtPronto" class="form form-control form-control-sm" name=""
+                                id="txtPronto">
+                            <datalist id="listaTxtPronto"> </datalist>
+                        </div>
+
+                        <div class="col-1 p-0 iconMenu">
+                            <button class="btn   " type="button" id="AddTxtPronto">
+                                <img src="icon/iconAddInfo.png" class="iconMenu2">
+                            </button>
+                        </div>
+
+                        <div class="col-1 p-0 iconMenu">
+                            <button class="btn   " type="button" id="subTxtPronto">
+                                <img src="icon/iconSub.png" class="iconMenu2">
+                            </button>
+                        </div>
                     </div>
                     <div class="edit">
                         <form id="formNote">
@@ -117,8 +133,7 @@
                                     <label> Sub Status: </label>
                                 </div>
                                 <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <select class="form form-control form-control-sm" id="txt_subStatus">
-
+                                    <select class="form form-control form-control-sm" id="txt_subStatus" value="">
                                     </select>
                                 </div>
                             </div>
@@ -184,7 +199,7 @@
                                     <label>On Call (Call Started)</label>
                                 </div>
                                 <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
-                                    <input type="text" class="form-control form-control-sm" id="txt_oncall2" value=""
+                                    <input type="text" class="form-control form-control-sm" id="txt_oncall2"
                                         placeholder="signaled on time" />
                                 </div>
                             </div>
