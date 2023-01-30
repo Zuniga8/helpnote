@@ -72,6 +72,7 @@ document.querySelector('#txt_subStatus').innerHTML = recebess
 document.querySelector('#limparNote').addEventListener('click', function () {
     form.reset();
     document.querySelector(".lbl").innerHTML = "";
+    calcTextarea()
     checkbl = []
 })
 
