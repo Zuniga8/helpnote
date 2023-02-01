@@ -7,20 +7,20 @@ const t = new Date();
 const txt_date = t.getDate() + "/" + (t.getMonth() + 1) + "/" + t.getFullYear()
 
 //      Menu Note
+
 let opt = document.querySelectorAll('.opt')
-document.querySelectorAll('[name="options"]').forEach(function (op) {
-    op.addEventListener('click', function () {
-        for (let x = 0; x < opt.length; x++) {
-            if (op.value == opt[x].classList[1]) {
-                opt[x].classList.toggle("d-none")
-            } else {
-                opt[x].classList.remove("d-none")
-                opt[x].classList.toggle("d-none")
-            }
+document.querySelector('.optMenu').addEventListener('change', function (ch) {
+    document.querySelectorAll('[name="options"]').forEach(function (op, id) {
+        //console.log(id + ' = ' + op.value + ' - ' + op.checked)
+        if (!opt[id].className.includes('d-none')) {
+            opt[id].classList.add('d-none')
+        }
+        if (op.checked) {
+            opt[id].classList.remove('d-none')
         }
     })
 })
-//      Menu Note
+//      FIM  Menu Note
 
 //          Textarea {
 let textEnter = document.querySelectorAll(".txtarea");
@@ -45,39 +45,44 @@ document.querySelector('#txt_subStatus').innerHTML = recebess
 
 
 //      bad Leads
-{
-    let exibeBadlead = ''
-    listBadleads.forEach(function (bl, n) {
-        exibeBadlead = exibeBadlead +
-            '<li><input type="checkbox" name="menuopt" id="drop' + n + '" value="' + bl + '"/>' +
-            '<label class="open" for="drop' + n + '">' + bl + '</label></li>'
-    })
-    document.querySelector('.badLeads').innerHTML = exibeBadlead
 
-    let checkbl = []
-    document.querySelectorAll('input[name="menuopt"]').forEach(function (blc) {
-        blc.addEventListener('click', function () {
-            if (blc.checked == true) {
-                checkbl.push(blc.value)
-            } else if (blc.checked == false) {
-                let n = checkbl.indexOf(blc.value)
-                checkbl.splice(n, 1)
-            }
-        })
+let exibeBadlead = ''
+let checkbl = []
+listBadleads.forEach(function (bl, n) {
+    exibeBadlead = exibeBadlead +
+        '<li><input type="checkbox" name="menuopt" id="drop' + n + '" value="' + bl + '"/>' +
+        '<label class="open" for="drop' + n + '">' + bl + '</label></li>'
+})
+document.querySelector('.badLeads').innerHTML = exibeBadlead
+document.querySelectorAll('input[name="menuopt"]').forEach(function (blc) {
+    blc.addEventListener('click', function () {
+        if (blc.checked == true) {
+            checkbl.push(blc.value)
+        } else if (blc.checked == false) {
+            let n = checkbl.indexOf(blc.value)
+            checkbl.splice(n, 1)
+        }
     })
-}//      Fim badleads
+})
+//      Fim badleads
 
 
 // BTN limpar dados 
 document.querySelector('#limparNote').addEventListener('click', function () {
     form.reset();
     document.querySelector(".lbl").innerHTML = "";
-    calcTextarea()
-    checkbl = []
+    checkbl = [];
+
+    let txt_textarea = document.querySelectorAll('textarea')
+    txt_textarea.forEach(function (t) {
+        t.style.height = "auto"
+        t.style.height = txt_textarea.scrollHeight + "px";
+    })
+
 })
 
 // Fim BTN limpar dados
- 
+
 //      btn menu preview
 let form = document.querySelector('#formNote')
 let preview = document.querySelector('.preview')
@@ -147,15 +152,32 @@ document.querySelector('#CopiarNote').addEventListener('click', function () {
 
 //      lista Txt Pronto
 {
-let optScript = ''
-scriptProntos.forEach(function (opt) {
-  optScript = optScript + '<option value="' + opt.indice + '">'
-})
-document.querySelector('#listaTxtPronto').innerHTML = optScript
+    let optScript = ''
+    scriptProntos.forEach(function (opt) {
+        optScript = optScript + '<option value="' + opt.indice + '">'
+    })
+    document.querySelector('#listaTxtPronto').innerHTML = optScript
 } //      Fim lista Txt Pronto
 
-//      ADD  lista Txt Pronto
 
+//      ADD  lista Txt Pronto
+document.querySelector('#AddTxtPronto').addEventListener('click', function () {
+    let txtPronto = document.querySelector('#txtPronto').value;
+    let subStatus = document.querySelector('#txt_subStatus')
+
+    if (txtPronto != '') {
+        scriptProntos.forEach(function (item) {
+            if (item.indice == txtPronto) {
+                subStatus.selectedIndex = item.substatus;                                  // substatus
+                document.querySelector('#txt_reason').value = item['Reason/Comments']       //  reason comments
+                let txt_textarea = document.querySelector('#txt_oncall')                    // txt oncall
+                txt_textarea.value = txt_textarea.value + item.oncall;
+                txt_textarea.style.height = "auto"
+                txt_textarea.style.height = txt_textarea.scrollHeight + "px";
+            }
+        })
+    }
+})
 
 //      Fim lista Txt Pronto
 
