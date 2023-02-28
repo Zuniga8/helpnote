@@ -1,96 +1,110 @@
-*{
-  background-color: rgb(117, 114, 114);
-  color: #fff;
-}
+* {}
 
 input[type=radio] {
-    display: none;
+  display: none;
 }
+
 input[type=checkbox] {
-    display: none;
+  display: none;
 }
-
-
 
 ul {
-    list-style: none;
-    width: 240px;
-    margin: 0;
-    padding: 0;
-    position: relative
-  }
-   
-  .n1 {
-    padding: 0;
-  }
-  
-  ul li ul li { 
-    background-color: #fff;
-  }
-  
-  .open {
-    padding: 5px;
-    width: 240px;
-    
-  }
-  
-  ul li ul {
-    display: none;
-    position: absolute;
-    
-  }
-  
-  ul label:hover~ul {
-    display: block;
-    margin: 0;
-    position: absolute;
-    padding: 0;
-  }
-  
-  li ul:hover {
-    display: block; 
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  /* n3 */
-  .menu {
-    border: solid 6px red;
-    height: 240px;
-    overflow-y: auto; 
-    
-  }
-  .menu::-webkit-scrollbar {
-    display: none;
-    }
-  
-  ul li input:checked~label {
-    background-color: rgb(187, 187, 201);
-  }
-/*      fim badleads*/  
+  list-style: none;
+  width: 240px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.n1 {
+  padding: 0;
+}
+
+ul li ul li {
+  background-color: #fff;
+}
+
+.open {
+  padding: 5px;
+  width: 240px;
+
+}
+
+ul li ul {
+  display: none;
+  position: absolute;
+
+}
+
+ul label:hover~ul {
+  display: block;
+  margin: 0;
+  position: absolute;
+  padding: 0;
+}
+
+li ul:hover {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* n3 */
+.menu {
+  border: solid 6px red;
+  height: 240px;
+  overflow-y: auto;
+
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+ul li input:checked~label {
+  background-color: rgb(187, 187, 201);
+}
+
+/*      fim badleads*/
 
 /*  scrool  */
-div.row{
+div.row {
   width: 100%;
 }
-.Note{
+
+.Note {
   height: 680px;
   width: 100%;
-  overflow-y: auto;  
+  overflow-y: auto;
 }
-.quadro{
+
+.quadro {
   height: 700px;
   width: 920px;
 }
-.iconMenu2{
+
+.iconMenu2 {
   width: 25px;
   height: 25px;
-  padding:0;
+  padding: 0;
   margin: 0;
 
 }
-.iconMenu{ 
+
+.iconMenu {
   padding-left: 0px;
   padding-right: 0px;
+}
+/*    quadro QA process     */
+.qabox{
+  width: auto;
+}
+.optQuestion{
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
 }

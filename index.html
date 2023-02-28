@@ -19,6 +19,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
+
+
+    <script src="page/winCriteria.html"></script>
     <title>QA Note 2.0</title>
 
 
@@ -30,43 +33,55 @@
 </head>
 
 <body class="">
-    <div class="container m-1">
+    <div class="container m-1 ">
         <div class="row">
-            <h1>teste</h1>
+            <h1> </h1>
         </div>
-        <div class="row g-0">
-            <div class="col-sm-1  p-1 text-center">
+        <div class="row g-0 mt-4">
+            <div class="col-sm-1 optMenu p-1 text-center">
                 <div>
                     <input type="radio" name="options" id="AddInfo" value="AddInfo">
                     <label for="AddInfo">
-                        <img src="icon/iconAddInfo.png" class=" p-2 border border-dark rounded-5 mt-2 mb-2" width="60px"
-                            height="60px">
+                        <img src="icon/iconAddInfo.png" title="Adicionar informações!"
+                            class=" p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
                 </div>
                 <div>
-                    <input type="radio" name="options" id="Note" value="Note" checked>
+                    <input type="radio" name="options" id="Note" value="Note">
                     <label for="Note">
-                        <img src="icon/iconNote.png" class="p-2 border border-dark rounded-5 mt-2 mb-2" width="60px"
-                            height="60px">
+                        <img src="icon/iconNote.png" title="Criar Note !"
+                            class="p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
                 </div>
                 <div>
 
                     <input type="radio" name="options" id="Mail" value="Mail">
                     <label for="Mail">
-                        <img src="icon/iconMailpng.png" class=" p-2 border border-dark rounded-5 mt-2 mb-2" width="60px"
-                            height="60px">
+                        <img src="icon/iconMailpng.png" title="Editar Email!"
+                            class=" p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
                 </div>
                 <div>
-                    <label for="copy">
-                        <img src="icon/iconCopy.png" class="p-2 border border-dark rounded-5 mt-2 mb-2" width="60px"
-                            height="60px">
+                    <input type="radio" name="options" id="WCriteria" value="WCriteria">
+                    <label for="WCriteria">
+                        <img src="icon/iconWC.png" title="Win Criteria"
+                            class="p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
+                    </label>
+
+                </div>
+
+                <div>
+                    <input type="radio" name="options" id="QAprocess" value="QAprocess">
+                    <label for="QAprocess">
+                        <img src="icon/iconWC.png" title="Win Criteria"
+                            class="p-2 border border-danger border-5 rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
 
                 </div>
             </div>
-            <div class="col-sm-7 border border-dark p-2 m-1 rounded-3 quadro">
+            <div class="col-sm-10 border border-dark p-2 m-1 rounded-3 quadro container">
+
+
                 <div class="opt AddInfo d-none">
                     <h1> Adicionar info</h1>
                 </div>
@@ -74,32 +89,35 @@
 
                 <div class="opt Note d-none">
                     <div class="menuNote row">
-                        <div class=" col-4 fs-2">
+                        <div class="fw-semibold col-3 fs-2">
                             Criar Note:
-                        </div>  
-                        
+                        </div>
+
                         <div class="col-1 p-0 iconMenu">
-                            <button for="" class="btn " type="button" id="checkPreview"  value="checkPreview">
-                                 <img src="icon/iconPreview.png" class="iconMenu2">
+                            <button class="btn btn-light fw-semibold " type="button" id="checkPreview">
+                                Preview
+                                <!-- <img src="icon/iconPreview.png" class="iconMenu2"> -->
                             </button>
                         </div>
 
                         <div class="col-1 p-0 iconMenu">
-                            <button for="checkPreview" class="btn " type="button" id="CopiarNote"
+                            <button class="btn btn-light fw-semibold " type="button" id="CopiarNote"
                                 data-clipboard-action="copy" data-clipboard-target="#note2">
-                                <img src="icon/iconCopy.png" class="iconMenu2">
+                                Copiar
+                                <!-- <img src="icon/iconCopy.png" class="iconMenu2"> -->
                             </button>
                         </div>
 
                         <div class="col-1 p-0 iconMenu">
-                            <button class="btn  " type="button" id="limparNote">
-                                <img src="icon/iconClear.png" class="iconMenu2">
+                            <button class="btn btn-light fw-semibold" type="button" id="limparNote">
+                                Limpar
+                                <!-- <img src="icon/iconClear.png" class="iconMenu2"> -->
                             </button>
                         </div>
 
-                        <div class="col-3 pt-0"> <!-- botao script pronto -->
-                            <input list="listaTxtPronto" class="form form-control form-control-sm" name=""
-                                id="txtPronto">
+                        <div class="col-3 pt-0 mt-1"> <!-- botao script pronto -->
+                            <input list="listaTxtPronto" class="form form-control form-control-sm sticky-md-bottom "
+                                name="" id="txtPronto" placeholder="Templates Prontos">
                             <datalist id="listaTxtPronto"> </datalist>
                         </div>
 
@@ -115,6 +133,8 @@
                             </button>
                         </div>
                     </div>
+                    <br>
+
                     <div class="edit">
                         <form id="formNote">
 
@@ -154,7 +174,7 @@
 
                                     <label>On Call Comments: </label>
                                 </div>
-                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
+                                <div class="col-sm-9 col-md-9 col-xl-5 mb-2 ms-0 ps-1">
                                     <textarea class="form-control form-control-sm txtarea" id="txt_oncall" rows="3"
                                         style="overflow: hidden"></textarea>
                                 </div>
@@ -165,7 +185,7 @@
 
                                     <label> Tags Implemented: </label>
                                 </div>
-                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
+                                <div class="col-sm-9 col-md-9 col-xl-5 mb-2 ms-0 ps-1">
                                     <textarea class="form-control form-control-sm txtarea" id="txt_tagImp" rows="2"
                                         style="overflow: hidden"></textarea>
                                 </div>
@@ -176,8 +196,8 @@
 
                                     <label>Screenshots: </label>
                                 </div>
-                                <div class="col-sm-8 col-md-8 col-xl-5 mb-2 ms-0 ps-1">
-                                    <textarea class="form-control form-control-sm txtarea" id="txt_screen" rows="3"
+                                <div class="col-sm-9 col-md-9 col-xl-5 mb-2 ms-0 ps-1">
+                                    <textarea class="form-control form-control-sm txtarea" id="txt_screen" rows="4"
                                         style="overflow: hidden"></textarea>
                                 </div>
                             </div>
@@ -225,7 +245,9 @@
                             </div>
 
                         </form>
+
                     </div>
+
                     <div class="preview d-none">
                         <div class="container-md clear user-select-all lh-1" id="note2">
                             <div class="row bg-light border border-dark lbl py-2 col-sm-10 col-md-11 col-xl-8"
@@ -237,10 +259,119 @@
 
 
                 <div class="opt Mail d-none">
-                    <h1> Adicionar E-mail</h1>
+                    <div class="row">
+                        <div class="col-4">
+                            <h1> Adicionar E-mail</h1>
+                        </div>
+                        <div class="col mt-3">
+                            <select class=" " name="selEmail" id="">
+                                <option>PT</option>
+                                <option>ESP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <form class="form-control form-control-sm">
+                            <div class="row">
+                                <div class="col-2">
+                                    <label for="">Selecione o E-mail: </label>
+                                </div>
+                                <div class="col-4">
+                                    <select class="form-control form-control-sm " name="selEmail" id="">
+                                        <option></option>
+                                        <option>Link da Reunião</option>
+                                        <option>Tentativa de contato</option>
+                                        <option>3/9 - dia 3</option>
+                                        <option>3/9 - dia 6</option>
+                                        <option>Aguardando Anunciante 48h</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
+
+                    <div class="container"></div>
+                </div>
+
+                <div class="opt WCriteria d-none m-3">
+                    <h1>WinCriteria</h1>
+                    <br>
+
+                    <div class="row  ">
+                        <div class="col-auto">
+                            <label for="">Selecione a TASK: </label>
+                        </div>
+                        <div class="col-3">
+                            <select class="form-control form-control-sm " name="listaTask" id="">
+                                <option></option>
+                                <option>ADS Conversion Code</option>
+                                <option>ADS Enhanced Conversion</option>
+                                <option>Web Call Conversion - WCC</option>
+                                <option>Analytics Setup</option>
+                            </select>
+                        </div>
+
+                        <div class="col-auto">
+                            <label for="">Selecione a TASK: </label>
+                        </div>
+                        <div class="col-3">
+                            <select class="form-control form-control-sm " name="listaEtapa" id="">
+                                <option></option>
+                                <option>implementação</option>
+                                <option>Validando implementação feita</option>
+                                <option>Fechamento de Caso</option>
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-light fw-semibold" type="button" id="consultaLista">
+                                Consultar
+                            </button>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row ">
+                        <div class="col">
+                            <div class="m-1">
+                                Como tratar:
+                            </div>
+                            <div class="border border-1 border-dark rounded p-2 bg-light bg-gradient">
+                                algo
+                            </div>
+                        </div>
+                        <div class="col ">
+                            <div class="m-1">
+                                Screenshots importantes:
+                            </div>
+                            <div class="border border-1 border-dark rounded p-2 bg-light bg-gradient">
+                                algo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="opt QAprocess m-3">
+                    <div class="row  ">
+                        <h1> QA Process</h1>
+                        <p>Siga as etapas de acordo com as opções: </p>
+                    </div>
+                    <br>
+                    <div class="row col-auto d-grid gap-1 px-5"> 
+                        <div class=" border border-warning border-1 text-center qabox p-2 bg-light p-3" id="quizQA">
+                            <div class="question">
+                            </div>
+                            <div class="option"></div>
+                            <div class="print"></div>
+
+                            <button type="button" class="btn btn-dark px-4" id="startQA">Iniciar</button>
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 
