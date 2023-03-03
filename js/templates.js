@@ -38,6 +38,17 @@ export const scriptProntos = [
             "- informou que teve um imprevisto e não poderá entrar na reunião, e solicitou reagendar,\n" +
             "- caso reagendado para o dia XX/XX as HH/MM .\n"
     },
+
+    {
+        'indice': 'Reagendamento - não houve resposta do anunciante ',
+        'substatus': 9,
+        'Reason/Comments': 'Reagendado - anunciante não responde',
+        'oncall': "" +
+            '- Foram feitas 2 tentativas de contato via telefone, porem sem sucesso, \n' +
+            '- Foi enviado email de tentativa de contato e aguardei 10 min na meeting,\n' +
+            '- Fiz uma nova tentativa de contato, mas não tive retorno, \n' +
+            "- devido ao caso ja ter sido reagendado e que não obtivemos resposta do anunciante, o mesmo sera encerrado. \n"
+    },
     {
         'indice': 'Reagendamento - exceção',
         'substatus': 1,
@@ -156,44 +167,45 @@ export const scriptProntos = [
             "- Informo ao anunciante que iremos acompanhar a conta do Google ADS por 2 dias para ver se está gerando conversões/impressões e que assim que tudo estiver bem em termos de conversões, o caso será encerrado."
     },
     {
-        'indice': '',
-        'substatus': '',
-        'Reason/Comments': '',
+        'indice': 'NRP - closed case',
+        'substatus': 9,
+        'Reason/Comments': 'NRP - No response from advertiser',
         'oncall': "" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n"
+            '- Foram feitas 2 tentativas de contato via telefone, porem sem sucesso, \n' +
+            '- Foi enviado email de tentativa de contato e aguardei 10 min na meeting,\n' +
+            '- Fiz uma nova tentativa de contato, mas não tive retorno, \n' +
+            '- Seguindo as regras de NPR, o caso sera encerrado'
     },
     {
-        'indice': '',
-        'substatus': '',
-        'Reason/Comments': '',
+        'indice': '3/9 - dia 1 / 3 / 6',
+        'substatus': 5,
+        'Reason/Comments': '3/9 - dia ',
         'oncall': "" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n"
+            '- Feito contato com anunciante , \n'+
+            '- ...informar o que anunciante disse , \n'+
+            '- Informo ao anunciante que faremos um seguimento de 9 dias, onde a cada 3 dias vou entrar em contato para verificar se o que estava pendente foi realizado, \n' 
+            
     },
     {
-        'indice': '',
-        'substatus': '',
-        'Reason/Comments': '',
+        'indice': '3/9 - no response',
+        'substatus': '5',
+        'Reason/Comments': '3/9 - dia',
         'oncall': "" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n"
+            "- Feito tentativa de contato com anunciante , sem exito , \n" +
+            "- Feito verificação, e ação pendente ainda não foi realizada , \n" +
+            "- ... descrever o que esta pendente .... , \n" +
+            "- Vou enviar um email ao anunciante informando a tentativa de contato, e fazer uma nova tentativa em 3 dias uteis , \n"
     },
     {
-        'indice': '',
-        'substatus': '',
-        'Reason/Comments': '',
+        'indice': 'Fechamento de caso',
+        'substatus': 16,
+        'Reason/Comments': 'Registrando conversões/impressões',
         'oncall': "" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n" +
-            "-  , \n"
+            "- Feito Verificação , \n" +
+            "- no Ads, houve registro de conersão e a aba diagnostico foi alterada para Recording conversion , \n" +
+            "- no Dashboard EC, houve registro de hits e não foi detectado nenhum erro , \n" +
+            "- no Tag assistant, foi feito testes, e visto que as conversões/Tags, estão ativando corretamente , \n"+
+            "- De acord com as verificações feitas, o caso sera encerrado , \n" 
     },
     {
         'indice': '',
@@ -260,7 +272,7 @@ export const listBadleads = [
     "SPAM - Email Client"
 ]
 export const listSubStatus = [
-    "-",
+    "AS - Work in Progress",
     "AS - Reschedule 1 (ts as resched1)",
     "AS - Acceptable Reschedule (ts as reschedok)",
     "NI - Awaiting Inputs (ts ni ai)",
