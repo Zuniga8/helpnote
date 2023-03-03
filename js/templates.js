@@ -178,7 +178,7 @@ export const scriptProntos = [
     },
     {
         'indice': '3/9 - dia 1 / 3 / 6',
-        'substatus': 5,
+        'substatus': 3,
         'Reason/Comments': '3/9 - dia ',
         'oncall': "" +
             '- Feito contato com anunciante , \n'+
@@ -188,7 +188,7 @@ export const scriptProntos = [
     },
     {
         'indice': '3/9 - no response',
-        'substatus': '5',
+        'substatus': 3,
         'Reason/Comments': '3/9 - dia',
         'oncall': "" +
             "- Feito tentativa de contato com anunciante , sem exito , \n" +
