@@ -96,3 +96,15 @@ div.row {
   padding-left: 0px;
   padding-right: 0px;
 }
+/*    quadro QA process     */
+.qabox{
+  width: auto;
+}
+.optQuestion{
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 8px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+}
