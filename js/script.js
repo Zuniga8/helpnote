@@ -185,11 +185,6 @@ let question = document.querySelector('.question')
 let quest_task = document.querySelectorAll('.optQuestion')
 let options = '<div class="optQuestion mx-auto" value="ntipo">OPT</div>'
 
-
-let opt_market = ''
-let option = ''
-
-let quizHistory = ''
 //      btn stat
 let btnstarted = document.querySelector('#startQA')
 btnstarted.addEventListener('click', function (btn) {
@@ -200,129 +195,60 @@ btnstarted.addEventListener('click', function (btn) {
 
 //      info task
 function quizTask() {
+    console.log('quizTask clicked')
     let receneTask = ''
     question.innerHTML = '<h3>' + task.titulo + '</h3>'
-    task.task.forEach(function (tTask, id) {
-        console.log(tTask.tipo)
-        receneTask = receneTask + options.replace('OPT', tTask.task)
+    task.steps.forEach(function (tTask, id) {
+        receneTask = receneTask + options.replace('OPT', tTask.step)
 
     });
     qabox.innerHTML = receneTask
 }
 
+//          btn Quiz Option
+document.addEventListener('click', function(b){
+    if(b.target.className.includes('optQuestion')){
+        //console.log('clic')
+        //console.log(b.target.innerText)        
+        let Tquiz = pesquisa(b.target.innerText)
+        //console.log(Tquiz)
+        quizImprime(Tquiz)
+    } 
+})
 
-//      busca array
+//          imprime na tela as pergutas e alternativas
+function quizImprime (quizArray) { 
+    let receneTask = ''
+    question.innerHTML = '<h3>' + quizArray.titulo + '</h3>'
+    quizArray.steps.forEach(function (tTask, id) {
+        receneTask = receneTask + options.replace('OPT', tTask.step)
 
-function pesquisa(item) {
-    task.task.forEach(function (t) {
-        if (t.task == item) {
-            console.log(t.task)
-            console.log(t.step)
-            return [t.task, t.step]
+    });
+    qabox.innerHTML = receneTask
+    console.log(quizArray.tipo)
+}
+
+//          pesquisa Step
+function pesquisa(stepName) {
+    let result = { titulo: null, steps: null , tipo: null};
+
+    // Função recursiva para percorrer todos os steps
+    function searchSteps(step) {
+        if (step.step === stepName) {
+            result.titulo = step.titulo;
+            result.steps = step.steps;
+            result.tipo = step.tipo;
+            return;
         }
-    })
-    task.task.forEach(function (t) {
-        if (t.task == item) {
-            console.log(t.task)
-            t.step.forEach(function (s) {
-                if (s.step == item) {
-                    console.log(s.step)
-                    console.log(s.steps)
-                    return [s.step, s.steps]
-
-                }
-            })
-
-        }
-    })
-}
-
-function pesquisa(taskName, stepName) {
-    const taskToFind = task.task.find(t => t.task === taskName);
-  
-    if (!taskToFind) {
-      return null;
-    }
-  
-    const stepToFind = taskToFind.step.find(s => s.step === stepName);
-  
-    if (!stepToFind) {
-      return null;
-    }
-  
-    const stepValue = stepToFind;
-    const stepsArray = stepValue.steps;
-  
-    return { step: stepValue, steps: stepsArray };
-  }
-
-const result = pesquisa('Ads Conversion Code', 'Validar ID ADS');
-console.log(result); // { step: {...}, steps: [...] }
-
-
-
-
-
-function quizQuestion() {
-
-}
-function quizFinish() {
-
-}
-
-
-
-/*
-let recebeElemento = ''
-function escolhaTask() {
-    console.log(task[0].inicio)
-    question.innerHTML = '<h3>' + task[0].inicio + '</h3>'
-    for (let x = 0; x < task.length; x++) {
-        if (task[x].task) {
-            option = option + options.replace('OPT', task[x].task)
-            console.log(task[x].task)
+        if (step.steps && step.steps.length > 0) {
+            for (let i = 0; i < step.steps.length; i++) {
+                searchSteps(step.steps[i]);
+                if (result.steps) return; // Para a busca caso encontre o resultado
+            }
         }
     }
-    qabox.innerHTML = option
-    optvalue()
-}
-function optvalue() {
-    document.querySelectorAll('.optQuestion').forEach(function (task_opt) {
-        task_opt.addEventListener('click', function () {
-            opt_market = task_opt.innerHTML
-            console.log(opt_market)
-            //perguntas()
-            escolha_etapa()
-        })
-    })
-}
 
-function escolha_etapa() {
-    task.forEach(function (dado) {
-        if (dado.task == opt_market) {
-            //dado.steps
-            option = ''
-            question.innerHTML = '<h3> Siga as Etapas a Seguir : </h3>'
-            dado.steps.forEach(function(opt, id){
-                option = option + options.replace('OPT', opt.name_step)
-            })
-            qabox.innerHTML = option
-        }
-    })
-}
+    searchSteps(task); // Chama a função recursiva a partir do objeto task
 
-function escolha_etapa2() {
-    task.forEach(function (dado) {
-        if (dado.task == opt_market) {
-            //dado.steps
-            option = ''
-            question.innerHTML = '<h3> Siga as Etapas a Seguir : </h3>'
-            dado.steps.forEach(function(opt, id){
-                option = option + options.replace('OPT', opt.name_step)
-            })
-            qabox.innerHTML = option
-        }
-    })
+    return result;
 }
-*/
-
