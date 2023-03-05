@@ -1,6 +1,7 @@
 import { listSubStatus } from "./templates.js";
 import { listBadleads } from './templates.js';
 import { scriptProntos } from "./templates.js";
+import { task } from "./wincriteria.js";
 
 //      Time
 const t = new Date();
@@ -98,8 +99,6 @@ document.querySelector('#checkPreview').addEventListener('click', function () {
     }
 })
 
-// fim BTN menun previw
-
 document.querySelector('#txt_subStatus').addEventListener('change', function (op) {
     document.querySelector('#txt_subStatus').setAttribute('value', op.target.value)
 })
@@ -137,8 +136,6 @@ function GerarNote() {
     })
     document.querySelector("#notePreview").innerHTML = imprime;
 }
-//      FIM    gera note
-
 
 //       BTN copia
 document.querySelector('#CopiarNote').addEventListener('click', function () {
@@ -157,7 +154,7 @@ document.querySelector('#CopiarNote').addEventListener('click', function () {
         optScript = optScript + '<option value="' + opt.indice + '">'
     })
     document.querySelector('#listaTxtPronto').innerHTML = optScript
-} //      Fim lista Txt Pronto
+}
 
 
 //      ADD  lista Txt Pronto
@@ -177,16 +174,81 @@ document.querySelector('#AddTxtPronto').addEventListener('click', function () {
             }
         })
     }
+})//      Fim lista Txt Pronto
+
+
+
+//   QA process
+let qabox = document.querySelector('.option')
+let qaquestion = document.createElement('p')
+let question = document.querySelector('.question')
+let quest_task = document.querySelectorAll('.optQuestion')
+let options = '<div class="optQuestion mx-auto" value="ntipo">OPT</div>'
+
+//      btn stat
+let btnstarted = document.querySelector('#startQA')
+btnstarted.addEventListener('click', function (btn) {
+    btnstarted.classList.add('d-none')
+    console.log('oi')
+    quizTask()
 })
 
-//      Fim lista Txt Pronto
+//      info task
+function quizTask() {
+    console.log('quizTask clicked')
+    let receneTask = ''
+    question.innerHTML = '<h3>' + task.titulo + '</h3>'
+    task.steps.forEach(function (tTask, id) {
+        receneTask = receneTask + options.replace('OPT', tTask.step)
 
+    });
+    qabox.innerHTML = receneTask
+}
 
-//     SUB  lista Txt Pronto
+//          btn Quiz Option
+document.addEventListener('click', function(b){
+    if(b.target.className.includes('optQuestion')){
+        //console.log('clic')
+        //console.log(b.target.innerText)        
+        let Tquiz = pesquisa(b.target.innerText)
+        //console.log(Tquiz)
+        quizImprime(Tquiz)
+    } 
+})
 
-//      Fim lista Txt Pronto
+//          imprime na tela as pergutas e alternativas
+function quizImprime (quizArray) { 
+    let receneTask = ''
+    question.innerHTML = '<h3>' + quizArray.titulo + '</h3>'
+    quizArray.steps.forEach(function (tTask, id) {
+        receneTask = receneTask + options.replace('OPT', tTask.step)
 
+    });
+    qabox.innerHTML = receneTask
+    console.log(quizArray.tipo)
+}
 
+//          pesquisa Step
+function pesquisa(stepName) {
+    let result = { titulo: null, steps: null , tipo: null};
 
+    // Função recursiva para percorrer todos os steps
+    function searchSteps(step) {
+        if (step.step === stepName) {
+            result.titulo = step.titulo;
+            result.steps = step.steps;
+            result.tipo = step.tipo;
+            return;
+        }
+        if (step.steps && step.steps.length > 0) {
+            for (let i = 0; i < step.steps.length; i++) {
+                searchSteps(step.steps[i]);
+                if (result.steps) return; // Para a busca caso encontre o resultado
+            }
+        }
+    }
 
+    searchSteps(task); // Chama a função recursiva a partir do objeto task
 
+    return result;
+}
