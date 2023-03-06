@@ -183,19 +183,12 @@ let qabox = document.querySelector('.option')
 let qaquestion = document.createElement('p')
 let question = document.querySelector('.question')
 let quest_task = document.querySelectorAll('.optQuestion')
-let options = '<div class="optQuestion mx-auto" value="ntipo">OPT</div>'
-
-//      btn stat
-let btnstarted = document.querySelector('#startQA')
-btnstarted.addEventListener('click', function (btn) {
-    btnstarted.classList.add('d-none')
-    console.log('oi')
-    quizTask()
-})
+let options = '<div class="optQuestion mx-auto" value="ntipo">OPT</div>' 
+var backQuiz = []
 
 //      info task
 function quizTask() {
-    console.log('quizTask clicked')
+    //console.log('quizTask clicked')
     let receneTask = ''
     question.innerHTML = '<h3>' + task.titulo + '</h3>'
     task.steps.forEach(function (tTask, id) {
@@ -205,39 +198,78 @@ function quizTask() {
     qabox.innerHTML = receneTask
 }
 
+function backQuizget(){
+    
+    var st = []
+    document.querySelectorAll('#quizQA > .option >.optQuestion').forEach(function(a){
+        st.push({step : a.innerText})
+    })
+    backQuiz.push({titulo : question.querySelector('h3').innerText , steps : st})
+    return backQuiz
+}
+
 //          btn Quiz Option
-document.addEventListener('click', function(b){
-    if(b.target.className.includes('optQuestion')){
-        //console.log('clic')
-        //console.log(b.target.innerText)        
-        let Tquiz = pesquisa(b.target.innerText)
-        //console.log(Tquiz)
+document.addEventListener('click', function (b) {
+    
+    let Tquiz = pesquisa(b.target.innerText)
+    if (b.target.className.includes('optQuestion')) {  
         quizImprime(Tquiz)
+
+        //backQuiz.push(Tquiz)
+        
+        console.log( 'click opt ')
+        console.log(backQuiz)
+        
+        backQuizget()
+    }
+    if (b.target.id == 'startQA') {
+        document.querySelector('#startQA').classList.add('d-none')
+        document.querySelector('#backQA').classList.remove('d-none')
+        
+        //backQuizget()
+        let st2 = []
+        task.steps.forEach(function(a){
+            st2.push({step : a.step})
+        })
+        backQuiz.push({titulo : task.titulo , steps : st2 })
+
+        console.log(backQuiz)
+        quizTask()
+    }
+    if (b.target.id == 'backQA') {
+        console.log(backQuiz)
+        backQuiz.pop()
+        quizImprime(backQuiz[backQuiz.length-1])
     } 
 })
 
 //          imprime na tela as pergutas e alternativas
-function quizImprime (quizArray) { 
+function quizImprime(quizArray) {
     let receneTask = ''
+    console.log(quizArray.titulo)
     question.innerHTML = '<h3>' + quizArray.titulo + '</h3>'
-    quizArray.steps.forEach(function (tTask, id) {
-        receneTask = receneTask + options.replace('OPT', tTask.step)
-
-    });
+    if (quizArray.tipo == "finish") { 
+        receneTask = receneTask + quizArray.print
+    } else {
+        quizArray.steps.forEach(function (tTask, id) {
+            receneTask = receneTask + options.replace('OPT', tTask.step)
+        });
+    }
     qabox.innerHTML = receneTask
-    console.log(quizArray.tipo)
 }
 
 //          pesquisa Step
 function pesquisa(stepName) {
-    let result = { titulo: null, steps: null , tipo: null};
+    let result = { titulo: null, steps: null, tipo: null, print: null };
 
     // Função recursiva para percorrer todos os steps
     function searchSteps(step) {
-        if (step.step === stepName) {
+        
+        if (step.step === stepName ) {
             result.titulo = step.titulo;
             result.steps = step.steps;
             result.tipo = step.tipo;
+            result.print = step.print;
             return;
         }
         if (step.steps && step.steps.length > 0) {
