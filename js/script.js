@@ -106,6 +106,7 @@ document.querySelector('#txt_subStatus').addEventListener('change', function (op
 //      Gera note
 function GerarNote() {
     console.log('click beranote')
+    gtag('event', 'click_geranote')
     let imprime = '' + "<p class='pb-0 mb-2 text-break'><span class='fw-bold'>Data </span>" + txt_date + "</p>";
     let x = 0
     let form = document.querySelector('#formNote')
@@ -119,6 +120,7 @@ function GerarNote() {
             document.querySelectorAll("[name='menuopt']").forEach(function (opt) {
                 if (opt.checked) {
                     registra = registra + '<br>' + opt.value
+                    gtag('event', ''+ opt.value +'')
                 }
             })
         }
@@ -140,6 +142,7 @@ function GerarNote() {
 //       BTN copia
 document.querySelector('#CopiarNote').addEventListener('click', function () {
     if (preview.classList.contains('d-none') && !form.classList.contains('d-none')) {
+        gtag('event', 'click_copia')
         form.classList.toggle('d-none')
         preview.classList.toggle('d-none')
         GerarNote()
@@ -166,6 +169,7 @@ document.querySelector('#AddTxtPronto').addEventListener('click', function () {
         scriptProntos.forEach(function (item) {
             if (item.indice == txtPronto) {
                 subStatus.selectedIndex = item.substatus;                                  // substatus
+                gtag('event', ''+ item.substatus +'')
                 document.querySelector('#txt_reason').value = item['Reason/Comments']       //  reason comments
                 let txt_textarea = document.querySelector('#txt_oncall')                    // txt oncall
                 txt_textarea.value = txt_textarea.value + item.oncall;
