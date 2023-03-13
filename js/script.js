@@ -169,7 +169,6 @@ document.querySelector('#AddTxtPronto').addEventListener('click', function () {
         scriptProntos.forEach(function (item) {
             if (item.indice == txtPronto) {
                 subStatus.selectedIndex = item.substatus;                                  // substatus
-                gtag('event', ''+ item.substatus +'')
                 document.querySelector('#txt_reason').value = item['Reason/Comments']       //  reason comments
                 let txt_textarea = document.querySelector('#txt_oncall')                    // txt oncall
                 txt_textarea.value = txt_textarea.value + item.oncall;
@@ -178,6 +177,8 @@ document.querySelector('#AddTxtPronto').addEventListener('click', function () {
             }
         })
     }
+        gtag('event', ''+ subStatus.value +'')
+
 })//      Fim lista Txt Pronto
 
 
