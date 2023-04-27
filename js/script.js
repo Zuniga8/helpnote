@@ -114,7 +114,7 @@ function GerarNote() {
         let registra = ''
         //console.log(id + '- ' + lbl.innerText)
         if (id > 5 && id < 10) {
-            registra = "<br>" + form.querySelectorAll('textarea')[id - 3].value.replaceAll("\n", "<br>");
+            registra = "<br>" + form.querySelectorAll('textarea')[id - 6].value.replaceAll("\n", "<br>");
             x += 1
         } else if (id == 12) {
             document.querySelectorAll("[name='menuopt']").forEach(function (opt) {
