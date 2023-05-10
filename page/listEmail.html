@@ -1,35 +1,98 @@
-<div class="opt Mail d-none">
-    <div class="row">
-        <div class="col-4">
-            <h1> Adicionar E-mail</h1>
-        </div>
-        <div class="col mt-3">
-            <select class=" " name="selEmail" id="">
-                <option>PT</option>
-                <option>ESP</option>
-            </select>
-        </div>
+<div class="row">
+    <div class="col-4">
+        <h1> Adicionar E-mail</h1>
     </div>
-    <div class="container">
-        <form class="form-control form-control-sm">
-            <div class="row">
-                <div class="col-auto">
-                    <label for="">Selecione o E-mail: </label>
-                </div>
-                <div class="col-4">
-                    <select class="form-control form-control-sm " name="selEmail" id="">
-                        <option></option>
-                        <option>Link da Reunião</option>
-                        <option>Tentativa de contato</option>
-                        <option>3/9 - dia 3</option>
-                        <option>3/9 - dia 6</option>
-                        <option>Aguardando Anunciante 48h</option>
-                    </select>
-                </div>
+    <div class="col mt-3">
+        <select class=" " name="selEmail" id="">
+            <option>PT</option>
+            <option>ESP</option>
+        </select>
+    </div>
+</div>
+<div class="container">
+    <form class="form-control form-control-sm bg-transparent">
+        <div class="row">
+            <div class="col-auto">
+                <label for="">Selecione o E-mail: </label>
             </div>
-        </form>
+            <div class="col-4">
+                <select class="form-control form-control-sm " name="selEmail" id="">
+                    <option></option>
+                    <option>Link da Reunião</option>
+                    <option>Tentativa de contato</option>
+                    <option>3/9 - dia 3</option>
+                    <option>3/9 - dia 6</option>
+                    <option>Aguardando Anunciante 48h</option>
+                </select>
+            </div>
+
+            <div class="col-1 p-0 iconMenu">
+                <button class="btn btn-light fw-semibold " type="button" id="CopiarNote"
+                    data-clipboard-action="copy" data-clipboard-target="#template_email">
+                    Copiar
+                    <!-- <img src="icon/iconCopy.png" class="iconMenu2"> -->
+                </button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <div class="row ">
+        <div class="border border-light rounded-3 p-2 mx-2  quadroE" id="template_email">
+            <div class="emailAtempt">
+                <p> Hola, <strong>Advertiser_name</strong></p>
+                <br>
+                <p>Mi nombre es <strong>Name_agent</strong> y soy del equipo de Soluciones </p>
+                <p>Técnicas de Google. Intenté llamar al siguiente número: <strong>Account_Phonenumber__c</strong> sin éxito,
+                    ¿Tiene otro número
+                    para contactarlo? </p>
+                <p>Su consultoría estaba programada para hoy, con el objetivo de ayudarlo a implementar la siguiente
+                    tarea: </p>
+                <ul>
+                    <li><strong>task</strong></li>
+                </ul>
+
+                <p>En su sitio web: <strong>URL_c</strong> </p>
+                <p>Intentaré llamarte nuevamente en 10 minutos, si lo prefieres, puedes acceder al vínculo a nuestra
+                    reunión: <strong>Meet_link</strong> </p>
+                <br>
+                <p>Gracias, </p>
+                <p><strong>Name_agent</strong> </p>
+                <div class="my-5">
+                    <img src="https://lh4.googleusercontent.com/S6XJfAj2zW9HJJUFZhEUJE-2ww8ZEr8iYrF80U81OR58l4gAuHM9l-5ob0z-90pxrfJSEMQi7lhJRAqjOVcWs44MLo8DcN20RXeDi0LmlBxZy_-JA0pmCYijhVaxxrofNjOwJvD6k0pfrhG38C3nmueW"
+                        width="59" height="60" class="mb-5" style="">
+                    &nbsp; &nbsp; <span>El equipo de Soluciones Técnicas de Google</span>
+                </div>
+                <p class="fst-italic termos ">
+                    <strong>Condiciones:</strong> Al responder este mensaje, usted reconoce que, por el presente, autoriza a un
+                    especialista en implementación de Google a guiarlo a través del proceso de instalación de Google Tag
+                    Manager
+                    Installation, Adwords Conversion Code en su sitio web, campaña o cuenta de Analytics, según sea
+                    necesario.
+                    Por el presente, usted acepta y reconoce que únicamente efectuará todos los cambios que sugiera y/o
+                    implemente Google por decisión propia y bajo su propia responsabilidad. Google no garantiza ni
+                    promete
+                    ningún tipo de resultado por implementar tales cambios. Asimismo, Google no se hace responsable de
+                    los
+                    efectos de dichos cambios, incluidos, entre otros, aumentos en la inversión relacionados con sus
+                    campañas de
+                    Google Ads, por los que usted será el único responsable. A su vez, usted acepta validar que su sitio
+                    web
+                    continúe funcionando de la forma deseada.
+                </p>
+                <p class="fst-italic termos">
+                    <strong>Nota:</strong> Le recomendamos que se asegure de crear una copia de seguridad completa de su sitio web
+                    antes
+                    de aplicar cualquier cambio. Por otra parte, NO debe compartir sus credenciales del sitio conmigo ni
+                    con
+                    ninguna otra persona de Google. Por último, si hace cambios en su sitio web o en su cuenta mientras
+                    trabajamos en su solicitud, es posible que pierda algunos de los cambios o parte de la
+                    configuración. Le
+                    sugerimos que se abstenga de realizar cambios en su sitio web o cuenta hasta que se hayan
+                    implementado los
+                    cambios recomendados.
+                </p>
+            </div>
+
+        </div>
     </div>
-
-
-    <div class="container"></div>
 </div>
