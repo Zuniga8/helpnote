@@ -49,9 +49,21 @@
             var clipboard = new ClipboardJS('.btn');
         })
     </script>
+
+    
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'page/listEmail.html', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('optEmail').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    </script>
 </head>
 
-<body class="">
+<body class="body">
     <div class="container m-1 ">
         <div class="row">
             <h1> </h1>
@@ -62,14 +74,14 @@
                     <input type="radio" name="options" id="AddInfo" value="AddInfo">
                     <label for="AddInfo">
                         <img src="icon/iconAddInfo.png" title="Adicionar informações!"
-                            class=" p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
+                            class=" p- border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
                 </div>
                 <div>
                     <input type="radio" name="options" id="Note" value="Note">
                     <label for="Note">
                         <img src="icon/iconNote.png" title="Criar Note !"
-                            class="p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
+                            class="p-0 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
                 </div>
                 <div>
@@ -77,14 +89,14 @@
                     <input type="radio" name="options" id="Mail" value="Mail">
                     <label for="Mail">
                         <img src="icon/iconMailpng.png" title="Editar Email!"
-                            class=" p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
+                            class=" p-0 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
                 </div>
                 <div>
                     <input type="radio" name="options" id="WCriteria" value="WCriteria">
                     <label for="WCriteria">
                         <img src="icon/iconWC.png" title="Win Criteria"
-                            class="p-2 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
+                            class="p-0 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
 
                 </div>
@@ -93,12 +105,12 @@
                     <input type="radio" name="options" id="QAprocess" value="QAprocess">
                     <label for="QAprocess">
                         <img src="icon/iconWC.png" title="Win Criteria"
-                            class="p-2 border border-danger border-5 rounded-5 mt-2 mb-2" width="60px" height="60px">
+                            class="p-0 border border-danger border-5 rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
 
                 </div>
             </div>
-            <div class="col-sm-10 border border-dark p-2 m-1 rounded-3 quadro container">
+            <div class="col-sm-10 border border-white p-2 m-1 rounded-3 quadro container">
 
 
                 <div class="opt AddInfo d-none">
@@ -106,7 +118,7 @@
                 </div>
 
 
-                <div class="opt Note">
+                <div class="opt Note d-none">
                     <div class="menuNote row">
                         <div class="fw-semibold col-3 fs-2">
                             Criar Note:
@@ -311,40 +323,9 @@
 
 
 
-                <div class="opt Mail d-none">
-                    <div class="row">
-                        <div class="col-4">
-                            <h1> Adicionar E-mail</h1>
-                        </div>
-                        <div class="col mt-3">
-                            <select class=" " name="selEmail" id="">
-                                <option>PT</option>
-                                <option>ESP</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <form class="form-control form-control-sm">
-                            <div class="row">
-                                <div class="col-2">
-                                    <label for="">Selecione o E-mail: </label>
-                                </div>
-                                <div class="col-4">
-                                    <select class="form-control form-control-sm " name="selEmail" id="">
-                                        <option></option>
-                                        <option>Link da Reunião</option>
-                                        <option>Tentativa de contato</option>
-                                        <option>3/9 - dia 3</option>
-                                        <option>3/9 - dia 6</option>
-                                        <option>Aguardando Anunciante 48h</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                <div class="opt Mail">
+                    <div id="optEmail"></div>
 
-
-                    <div class="container"></div>
                 </div>
 
                 <div class="opt WCriteria d-none m-3">
