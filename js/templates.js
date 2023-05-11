@@ -6,10 +6,10 @@ export const scriptProntos = [
         'Reason/Comments': '2DR - dia 1 ',
         'oncall': '' +
             '- Foram feitas 2 tentativas de contato via telefone, porem sem sucesso, \n' +
-            '- Foi enviado email de tentativa de contato e aguardei 10 min na meeting,\n' +
+            '- Foi enviado e-mail de tentativa de contato e aguardei 10 min na meeting,\n' +
             '- Fiz uma nova tentativa de contato, mas não tive retorno, \n' +
-            '- Inicianteo o acompanhamento 2 Day Rule, \n' +
-            '- farei uma nova tentativa de contato no proximo dia util.\n'
+            '- Iniciando o acompanhamento 2 Day Rule, \n' +
+            '- farei uma nova tentativa de contato no próximo dia util.\n'
     },
     {
         'indice': '2 Day Rule - dia 2 closed',
@@ -57,7 +57,7 @@ export const scriptProntos = [
             "- Feito o contato com o anunciante, \n" +
             "- informou que teve um imprevisto, XXXXXX , e não poderá entrar na reunião, e solicitou reagendar,\n" +
             "- caso reagendado como exceção para o dia XX/XX as HH/MM .\n" +
-            "- Anunciante ciente que o caso foi reagendado como exceção e que se não estiver disponivel no dia, o caso sera encerrado.\n"
+            "- Anunciante ciente que o caso foi reagendado como exceção e que se não estiver disponível no dia, o caso sera encerrado.\n"
     },
     {
         'indice': 'Reagendamento - Sem resposta ',
@@ -66,7 +66,7 @@ export const scriptProntos = [
         'oncall': "" +
             "- Feito o contato com o anunciante, \n" +
             "- Ciente que o caso ja havia sido reagendado, o mesmo solicita que o caso seja reagendado novamente\n" +
-            "- Explico ao anunciante que Seguindo nosso processo de agendamento, infelizmente o caso já ultrapassou o número de reagendamento permitido, e sera necessario inativar o caso .\n" +
+            "- Explico ao anunciante que Seguindo nosso processo de agendamento, infelizmente o caso já ultrapassou o número de reagendamento permitido, e sera necessário inativar o caso .\n" +
             "- Oriento ao anunciante que quando esteja pronto para tratar a implementação solicitada, faça a abertura de um novo caso . \n"
     },
     {
@@ -74,7 +74,7 @@ export const scriptProntos = [
         'substatus': 1,
         'Reason/Comments': 'Reagendado via Email    ',
         'oncall': "" +
-            "- anunciante informa por email que não estara disponivel para a ligação devido a um imprevisto, e solicita reagendar o caso,\n " +
+            "- anunciante informa por email que não vai estar disponível para a ligação devido a um imprevisto, e solicita reagendar o caso,\n " +
             "- caso reagendado para o dia DD/MM - HH PM"
     },
 
@@ -83,17 +83,17 @@ export const scriptProntos = [
         'substatus': 1,
         'Reason/Comments': 'Reagendado via Email',
         'oncall': "" +
-            "- Anunciante responde via email informando a data e hora escolida \n" +
+            "- Anunciante responde via email informando a data e hora escolhida \n" +
             "- caso reagendado como exceção para o dia XX/XX as HH/MM .\n"
     },
 
     {
-        'indice': 'Inative - Anunciante não esta interesado ',
+        'indice': 'Inative - Anunciante não esta interessado ',
         'substatus': 10,
-        'Reason/Comments': 'Anunciante não esta interesado',
+        'Reason/Comments': 'Anunciante não esta interessado',
         'oncall': "" +
             "- Em contato com anunciante , \n" +
-            "- Anunciante informa não estar interesado na implementação, e o mesmo esta de acordo com o fechamento do caso . \n" +
+            "- Anunciante informa que não esta interessado na implementação, e o mesmo esta de acordo com o fechamento do caso . \n" +
             "- Devido a esta resposta, o caso sera encerrado. \n"
     },
     //
@@ -103,8 +103,8 @@ export const scriptProntos = [
         'Reason/Comments': 'Technically Unfeasible',
         'oncall': "" +
             "- Após análise mais aprofundada sobre o caso, foi visto que a tarefa solicitada pelo gerente de contas não é possível de ser implementada porque =>insira_o_porquê<=.  , \n" +
-            "- Todas as opções disponiveis foram verificadas , \n" +
-            "- Tambem foi verificado com um SME, mas é realmente não sera possivel realizar a implementação. , \n"
+            "- Todas as opções disponíveis foram verificadas , \n" +
+            "- Também foi verificado com um SME, mas é realmente não sera possível realizar a implementação. , \n"
     },
     //          Script por Tasks - inclui GTM e Gtag
     {
@@ -114,13 +114,13 @@ export const scriptProntos = [
         'oncall': "" +
             "Em contato com anunciante, \n" +
             "- validamos a solicitação feita no Caso, \n" +
-            "- No google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', \n" +
+            "- No Google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', \n" +
             "- Anunciante informa que possui Backup da pagina, \n" +
-            "- Oriento ao anunciante como adicionar o codigo do google ADS e das conversões no codigo fonte da pagina,  \n" +
+            "- Oriento ao anunciante como adicionar o código do Google ADS e das conversões no código fonte da pagina,  \n" +
             "- Validamos com Tag Assistant, o funcionamento das tags, e testamos as ações de conversão na página web, e vimos que todas estão funcionando corretamente, \n" +
-            "- no google ADS, o status da conversão mudou para 'no recent conversion', \n" +
-            "- consultei o anunciante e diz não ter dúvidas sobre oimplementação feita, \n" +
-            "- informo ao anunciante que de acordo com todos os testes realizados no Tag Assistant, podemos dar por concluido o caso, ja que todas as conversões implementadas estão funcionando, portanto o caso sera encerrado.  "
+            "- no Google ADS, o status da conversão mudou para 'no recent conversion', \n" +
+            "- consultei o anunciante e diz não ter dúvidas sobre o implementação feita, \n" +
+            "- informo ao anunciante que de acordo com todos os testes realizados no Tag Assistant, podemos dar por concluído o caso, ja que todas as conversões implementadas estão funcionando, portanto o caso sera encerrado.  "
     },
     {
         'indice': 'ADS Conversion Tracking - GTM',
@@ -129,14 +129,14 @@ export const scriptProntos = [
         'oncall': "" +
             "Em contato com anunciante, \n" +
             "- validamos a solicitação feita no Caso, \n" +
-            "- No google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', \n" +
+            "- No Google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', \n" +
             "- Anunciante informa que possui Backup da pagina, \n" +
             "- Na pagina, oriento ao anunciante como implementar o GTM, \n" +
-            "- no GTM, creamos as tags referente as conversões do google ADS,  \n" +
+            "- no GTM, criamos as tags referente as conversões do Google ADS,  \n" +
             "- Validamos com Tag Assistant, o funcionamento das tags, e testamos as ações de conversão na página web, e vimos que todas estão funcionando corretamente, \n" +
-            "- no google ADS, o status da conversão mudou para 'no recent conversion', \n" +
-            "- consultei o anunciante e diz não ter dúvidas sobre oimplementação feita, \n" +
-            "- informo ao anunciante que de acordo com todos os testes realizados no Tag Assistant, podemos dar por concluido o caso, ja que todas as conversões implementadas estão funcionando, portanto o caso sera encerrado.  "
+            "- no Google ADS, o status da conversão mudou para 'no recent conversion', \n" +
+            "- consultei o anunciante e diz não ter dúvidas sobre o implementação feita, \n" +
+            "- informo ao anunciante que de acordo com todos os testes realizados no Tag Assistant, podemos dar por concluído o caso, ja que todas as conversões implementadas estão funcionando, portanto o caso sera encerrado.  "
     },
     {
         'indice': 'ADS Enhanced Conversion - Gtag',
@@ -144,11 +144,11 @@ export const scriptProntos = [
         'Reason/Comments': 'Aguardando conversões/impressões',
         'oncall': "" +
             "- validamos a solicitação feita no Caso, \n" +
-            "- No google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', e tambem habilitamos o EC na conversão XXX , \n" +
+            "- No Google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', e também habilitamos o EC na conversão XXX , \n" +
             "- Anunciante informa que possui Backup da pagina, \n" +
-            "- Oriento ao anunciante como adicionar o codigo do google ADS e das conversões no codigo fonte da pagina, \n" +
+            "- Oriento ao anunciante como adicionar o código do Google ADS e das conversões no código fonte da pagina, \n" +
             "- No Tag Assistant, testamos as ações de conversão na página web, e vimos que todas estão funcionando corretamente e a EC esta registrando os dados , \n" +
-            "- No google ADS, o status da conversão mudou para 'no recent conversion', \n" +
+            "- No Google ADS, o status da conversão mudou para 'no recent conversion', \n" +
             "- Consultei o anunciante e diz não ter dúvidas sobre implementação feita, \n" +
             "- Informo ao anunciante que iremos acompanhar a conta do Google ADS por 2 dias para ver se está gerando conversões/impressões e que assim que tudo estiver bem em termos de conversões, o caso será encerrado."
     },
@@ -158,11 +158,11 @@ export const scriptProntos = [
         'Reason/Comments': 'Aguardando conversões/impressões',
         'oncall': "" +
             "- validamos a solicitação feita no Caso, \n" +
-            "- No google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', e tambem habilitamos o EC na conversão XXX , \n" +
+            "- No Google ADS, criamos a conversão solicitadas, com o modelo de atribuição 'XXX', e também habilitamos o EC na conversão XXX , \n" +
             "- Anunciante informa que possui Backup da pagina, \n" +
-            "- No GTM, creamos as Tags Referente as conversões do google ADS , \n" +
+            "- No GTM, criamos as Tags Referente as conversões do Google ADS , \n" +
             "- No Tag Assistant, testamos as ações de conversão na página web, e vimos que todas estão funcionando corretamente e a EC esta registrando os dados corretamente, \n" +
-            "- No google ADS, o status da conversão mudou para 'no recent conversion', \n" +
+            "- No Google ADS, o status da conversão mudou para 'no recent conversion', \n" +
             "- Consultei o anunciante e diz não ter dúvidas sobre implementação feita, \n" +
             "- Informo ao anunciante que iremos acompanhar a conta do Google ADS por 2 dias para ver se está gerando conversões/impressões e que assim que tudo estiver bem em termos de conversões, o caso será encerrado."
     },
@@ -181,10 +181,10 @@ export const scriptProntos = [
         'substatus': 3,
         'Reason/Comments': '3/9 - dia ',
         'oncall': "" +
-            '- Feito contato com anunciante , \n'+
-            '- ...informar o que anunciante disse , \n'+
-            '- Informo ao anunciante que faremos um seguimento de 9 dias, onde a cada 3 dias vou entrar em contato para verificar se o que estava pendente foi realizado, \n' 
-            
+            '- Feito contato com anunciante , \n' +
+            '- ...informar o que anunciante disse , \n' +
+            '- Informo ao anunciante que faremos um seguimento de 9 dias, onde a cada 3 dias vou entrar em contato para verificar se o que estava pendente foi realizado, \n'
+
     },
     {
         'indice': '3/9 - no response',
@@ -202,10 +202,10 @@ export const scriptProntos = [
         'Reason/Comments': 'Registrando conversões/impressões',
         'oncall': "" +
             "- Feito Verificação , \n" +
-            "- no Ads, houve registro de conersão e a aba diagnostico foi alterada para Recording conversion , \n" +
+            "- no Ads, houve registro de conversão e a aba diagnostico foi alterada para Recording conversion , \n" +
             "- no Dashboard EC, houve registro de hits e não foi detectado nenhum erro , \n" +
-            "- no Tag assistant, foi feito testes, e visto que as conversões/Tags, estão ativando corretamente , \n"+
-            "- De acord com as verificações feitas, o caso sera encerrado , \n" 
+            "- no Tag assistant, foi feito testes, e visto que as conversões/Tags, estão ativando corretamente , \n" +
+            "- De acordo com as verificações feitas, o caso sera encerrado , \n"
     },
     {
         'indice': '',
@@ -293,79 +293,4 @@ export const listSubStatus = [
     "SO - Unverified (ts so unv)",
     "SO - Verification Not Needed (ts so vnn)"
 ]
-
-/*
-
-
-<==============================================================>
-
-AS - Reschedule 1 
-
-- Feito o contato com o anunciante, 
-- informou que teve um imprevisto e não podera entrar na reunião, e solicitou reagendar ,
-- caso reagendado para o dia XX/XX as HH/MM
-
-<==============================================================>
-
-NI - Awaiting Validation
-
-- em contato com anunciante, validamos a solicitação.
-- no ADS, implementamos as conversões solicitadas com o modelo de atribuição XXX
-- no GTM, implementamos as conversões criadas no google ADS,
-- no Tag Assistant, realizamos os testes das conversões implementadas e vimos que estão funcionando corretamente, 
-- anunciante informou que não houve duvidas referente a implementação e esta ciente de que todas as tags estão funcionando , 
-- ciente de que faremos um acompanhamento de 2 dias na conta de google ADS, para validar se esta registrando impressões/conversões na conta de ADS,
-
-
-<==============================================================>
-
-NI - Awaiting Inputs
-
-=> sem backup { via Gtag }
-
-- em contato com anunciante, validamos a solicitação,
-- no ADS, criamos as conversões referente a solicitação com modelo de atribuição XXX,
-- Anunciante informa que não possui acesso ao codigo da pagina / backup pronto, 
-- Ciente de que vou le enviar por email o codigo de conversão que sera necessario implementar na pagina, para que o desenvolvedor possa inserir por codigo,
-- Ciente de que faremos um acompanhamento de 9 dias, onde a cada 3 dias vou entrar em contato para validar a implementação.
-- Ciente de que vou retornar o contato dia XX/XX para seguir validar a implementação,
-
-
-=> sem backup { via GTM }
-
-- em contato com anunciante, validamos a solicitação,
-- no ADS, criamos as conversões referente a solicitação com modelo de atribuição XXX,
-- Anunciante informa que não possui acesso ao codigo da pagina / backup pronto, então oriento que usaremos a ferramenta chamada Google Tag Manager para a implementação,
-- no GTM, implementamos as conversões criadas no google ADS,
-- informo ao anunciante que sera necessario implementar o GTM no CMS da pagina para validar as tags,
-
-- Ciente de que faremos um acompanhamento de 9 dias, onde a cada 3 dias vou entrar em contato para validar a implementação.
-- Ciente de que vou retornar o contato dia XX/XX para seguir validar a implementação,
-
-<==============================================================>
-
-SO - Verified
-
-Lembre-se que ele vai ser a continuação do comentário do Need Info - Awaiting Validation
-Informe as validações que foram feitas
-Informe se houve registro das conversões
-Informe que o caso será encerrado
-Ex: "A conversão "Clique no Formulário" teve conversões registradas no painel do Google ADs, o Tag Assistant continua disparando a Tag verde/azul. Tudo solicitado pelo AM foi implementado corretamente e temos o registro das conversões, por esse motivo o caso será finalizado"
-
-
-<==============================================================>
-
-
-IN - Not Reachable
-Informe com detalhes o porque do caso estar sendo finalizado
-Ex: "Após o acompanhamento do 2 Day Rule e o anunciante não ter respondido nenhuma das minhas tentativas de contato, tanto por telefone como por email, irei inativar o caso"
-*/
-
-
-
-
-
-
-
-
-
+ 
