@@ -118,7 +118,7 @@
                 </div>
 
 
-                <div class="opt Note ">
+                <div class="opt Note d-none">
                     <div class="menuNote row">
                         <div class="fw-semibold col-3 fs-2">
                             Criar Note:
@@ -202,9 +202,10 @@
                                 <div class="col-sm-3  txt_label me-0 text-end ">
                                     <label> O anunciante estava de acordo com a gravação da chamada para fins de treinamento e qualidade?: </label>
                                 </div>
-                                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <input type="text" class="form-control form-control-sm txttext" id="txt_recording"
-                                        value="" />
+                                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1"> 
+                                    <select class="form form-control form-control-sm  txt_valid" id="txt_recording" value=""></select>
+                                    <!--<input type="text" class="form-control form-control-sm txttext" id="txt_recording"
+                                        value="" />-->
                                 </div>
                             </div>
                             <div class="row"> <!--  Implementação feita via GTM ?: -->
@@ -212,8 +213,9 @@
                                     <label> Implementação feita via GTM ? </label>
                                 </div>
                                 <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <input type="text" class="form-control form-control-sm txttext" id="txt_usegtm"
-                                        value="" />
+                                    <select class="form form-control form-control-sm  txt_valid" id="txt_usegtm" value=""></select>
+                                    <!-- <input type="text" class="form-control form-control-sm txttext" id="txt_usegtm"
+                                        value="" /> -->
                                 </div>
                             </div>
                             <div class="row"> <!-- Anunciante tinha Backup ?:-->
@@ -221,8 +223,9 @@
                                     <label> Anunciante tinha Backup ? </label>
                                 </div>
                                 <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <input type="text" class="form-control form-control-sm txttext" id="txt_backup"
-                                        value="" />
+                                    <select class="form form-control form-control-sm  txt_valid" id="txt_backup" value=""></select>
+                                    <!-- <input type="text" class="form-control form-control-sm txttext" id="txt_backup"
+                                        value="" /> -->
                                 </div>
                             </div>
                             <div class="row"> <!-- Conversão testada no Tag Assistant?: -->
@@ -230,8 +233,9 @@
                                     <label> Conversão testada no Tag Assistant ? </label>
                                 </div>
                                 <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <input type="text" class="form-control form-control-sm txttext" id="txt_testok"
-                                        value="" />
+                                    <select class="form form-control form-control-sm txt_valid" id=" txt_testok" value=""></select>
+                                    <!-- <input type="text" class="form-control form-control-sm txttext" id="txt_testok"
+                                        value="" /> -->
                                 </div>
                             </div>
                             <div class="row"> <!-- On Call Comments: -->
@@ -244,7 +248,6 @@
                                         style="overflow: hidden"></textarea>
                                 </div>
                             </div>
-
                             <div class="row"> <!--Tags Implemented:-->
                                 <div class="col-sm-3  txt_label me-0 text-end">
 
@@ -323,7 +326,7 @@
 
 
 
-                <div class="opt Mail d-none">
+                <div class="opt Mail">
                     <div id="optEmail"></div>
 
                 </div>
