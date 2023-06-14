@@ -45,6 +45,18 @@ document.querySelector('#txt_subStatus').innerHTML = recebess
 //      Fim sub Status
 
 
+let valid_recebes = ''
+let valid_list = [' ','sim', 'não', 'tentativa de contato']
+valid_list.forEach(function (ss) {
+    valid_recebes = valid_recebes + "<option>" + ss + "</option>";
+})
+document.querySelectorAll('.txt_valid').forEach(function(o){    
+    o.innerHTML = valid_recebes
+})
+
+//.innerHTML = valid_recebes
+
+
 //      bad Leads
 
 let exibeBadlead = ''
@@ -101,6 +113,9 @@ document.querySelector('#checkPreview').addEventListener('click', function () {
 
 document.querySelector('#txt_subStatus').addEventListener('change', function (op) {
     document.querySelector('#txt_subStatus').setAttribute('value', op.target.value)
+})
+document.querySelector('.txt_valid').addEventListener('change', function (op) {
+    document.querySelector('.txt_valid').setAttribute('value', op.target.value)
 })
 
 //      Gera note
