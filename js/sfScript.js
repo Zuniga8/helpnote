@@ -15,6 +15,15 @@ document.addEventListener('click', function(c){
             SFpreview.classList.toggle('d-none')
         }
     }
+    if ( c.target.id == 'SFlimparNote' ) {        
+        SFform.reset();
+        document.querySelector(".SFlbl").innerHTML = "";    
+        let txt_textarea = SFform.querySelectorAll('textarea')
+        txt_textarea.forEach(function (t) {
+            t.style.height = "auto"
+            t.style.height = txt_textarea.scrollHeight + "px";
+        })
+    }    
 })
 
 
