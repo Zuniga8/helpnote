@@ -1,0 +1,101 @@
+
+
+
+<div class="row">
+    <div class="col-8">
+        <h1> Note SalesForce</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="menuNote row">
+        <div class="fw-semibold col-3 fs-2">
+            Criar Note:
+        </div>
+
+        <div class="col p-0 iconMenu">
+            <button class="btn btn-light fw-semibold " type="button" id="SFcheckPreview">
+                Preview
+                <!-- <img src="icon/iconPreview.png" class="iconMenu2"> -->
+            </button>
+        </div>
+
+        <div class="col p-0 iconMenu">
+            <button class="btn btn-light fw-semibold " type="button" id="SFCopiarNote" data-clipboard-action="copy"
+                data-clipboard-target="#note2">
+                Copiar
+                <!-- <img src="icon/iconCopy.png" class="iconMenu2"> -->
+            </button>
+        </div>
+
+        <div class="col p-0 iconMenu">
+            <button class="btn btn-light fw-semibold" type="button" id="SFlimparNote">
+                Limpar
+                <!-- <img src="icon/iconClear.png" class="iconMenu2"> -->
+            </button>
+        </div>
+
+        <div class="col-3 pt-0 mt-1"> <!-- botao script pronto -->
+            <input list="SFlistaTxtPronto" class="form form-control form-control-sm sticky-md-bottom " name=""
+                id="SFtxtPronto" placeholder="Templates Prontos">
+            <datalist id="SFlistaTxtPronto"> </datalist>
+        </div>
+
+        <div class="col-1 p-0 iconMenu">
+            <button class="btn   " type="button" id="SFAddTxtPronto">
+                <img src="icon/iconAddInfo.png" class="iconMenu2">
+            </button>
+        </div>
+
+        <div class="col-1 p-0 iconMenu">
+            <button class="btn   " type="button" id="subTxtPronto">
+                <img src="icon/iconSub.png" class="iconMenu2">
+            </button>
+        </div>
+    </div>
+    <br>
+
+    <div class="edit">
+        <form id="SFformNote">
+
+            <div class="row"> <!-- Speakeasy ID:-->
+                <div class="col-sm-3  txt_label me-0 text-end fw-semibold ">
+                    <label> Speakeasy ID : </label>
+                </div>
+                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
+                    <input type="text" class="form-control form-control-sm txttext" id="txt_SFspeak" value="" />
+                </div>
+            </div>
+
+            <div class="row"> <!-- On Call : -->
+                <div class="col-sm-3  txt_label me-0 text-end">
+
+                    <label>On Call : </label>
+                </div>
+                <div class="col-sm-9 col-md-9 col-xl-5 mb-2 ms-0 ps-1">
+                    <textarea class="form-control form-control-sm txtarea" id="txt_SFoncall" rows="5"
+                        style="overflow: hidden"></textarea>
+                </div>
+            </div>
+            
+            <div class="row"> <!-- Next Course Of Action : -->
+                <div class="col-sm-3  txt_label me-0 text-end">
+
+                    <label>Next Course Of Action : </label>
+                </div>
+                <div class="col-sm-9 col-md-9 col-xl-5 mb-2 ms-0 ps-1">
+                    <textarea class="form-control form-control-sm txtarea" id="txt_SFnextAction" rows="3"
+                        style="overflow: hidden"></textarea>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="SFpreview d-none">
+        <div class="container-md clear user-select-all lh-1" id="SFnote">
+            <div class="row bg-light border border-dark lbl py-2 col-sm-10 col-md-11 col-xl-8" id="SFnotePreview"></div>
+        </div>
+    </div> 
+
+</div>
+
