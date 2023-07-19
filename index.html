@@ -5,26 +5,25 @@
     <!-- Google tag (gtag.js) conta G -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-75DHWEMLMZ"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-75DHWEMLMZ');
+        gtag('config', 'G-75DHWEMLMZ');
     </script>
-    
+
     <!-- Google tag (gtag.js) conta zuni8 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVLVZMYYYF"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-GVLVZMYYYF');
+        gtag('config', 'G-GVLVZMYYYF');
     </script>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-
 
     <script src="dist/clipboard.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -50,17 +49,29 @@
         })
     </script>
 
-    
+
     <script>
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'page/listEmail.html', true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                document.getElementById('optEmail').innerHTML = xhr.responseText;
-            }
-        };
-        xhr.send();
+
+        function loadPage(url, elementId) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById(elementId).innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+
+        // Exemplo de uso para carregar a primeira página
+        loadPage('page/listEmail.html', 'optEmail');
+
+        // Exemplo de uso para carregar a segunda página
+        loadPage('page/noteSforce.html', 'optSforce');
+
+
     </script>
+
 </head>
 
 <body class="body">
@@ -69,7 +80,7 @@
             <h1> </h1>
         </div>
         <div class="row g-0 mt-4">
-            <div class="col-sm-1 optMenu p-1 text-center">
+            <div class="col-sm-1 optMenu p-1 text-center">  <!--  icon Menu   -->
                 <div>
                     <input type="radio" name="options" id="AddInfo" value="AddInfo">
                     <label for="AddInfo">
@@ -82,6 +93,14 @@
                     <label for="Note">
                         <img src="icon/iconNote.png" title="Criar Note !"
                             class="p-0 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
+                    </label>
+                </div>
+                <div>
+
+                    <input type="radio" name="options" id="Sforce" value="Sforce">
+                    <label for="Sforce">
+                        <img src="icon/iconSforce.png" title="Note SalesForce!"
+                            class=" p-0 border border-dark rounded-5 mt-2 mb-2" width="60px" height="60px">
                     </label>
                 </div>
                 <div>
@@ -117,8 +136,7 @@
                     <h1> Adicionar info</h1>
                 </div>
 
-
-                <div class="opt Note">
+                <div class="opt Note ">
                     <div class="menuNote row">
                         <div class="fw-semibold col-3 fs-2">
                             Criar Note:
@@ -200,10 +218,12 @@
                             </div>
                             <div class="row"> <!-- O anunciante estava de acordo com a gravação da chamada para fins de treinamento e qualidade?:   -->
                                 <div class="col-sm-3  txt_label me-0 text-end ">
-                                    <label> O anunciante estava de acordo com a gravação da chamada para fins de treinamento e qualidade?: </label>
+                                    <label> O anunciante estava de acordo com a gravação da chamada para fins de
+                                        treinamento e qualidade?: </label>
                                 </div>
-                                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1"> 
-                                    <select class="form form-control form-control-sm  txt_valid" id="txt_recording" value=""></select>
+                                <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
+                                    <select class="form form-control form-control-sm  txt_valid" id="txt_recording"
+                                        value=""></select>
                                     <!--<input type="text" class="form-control form-control-sm txttext" id="txt_recording"
                                         value="" />-->
                                 </div>
@@ -213,7 +233,8 @@
                                     <label> Implementação feita via GTM ? </label>
                                 </div>
                                 <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <select class="form form-control form-control-sm  txt_valid" id="txt_usegtm" value=""></select>
+                                    <select class="form form-control form-control-sm  txt_valid" id="txt_usegtm"
+                                        value=""></select>
                                     <!-- <input type="text" class="form-control form-control-sm txttext" id="txt_usegtm"
                                         value="" /> -->
                                 </div>
@@ -223,7 +244,8 @@
                                     <label> Anunciante tinha Backup ? </label>
                                 </div>
                                 <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <select class="form form-control form-control-sm  txt_valid" id="txt_backup" value=""></select>
+                                    <select class="form form-control form-control-sm  txt_valid" id="txt_backup"
+                                        value=""></select>
                                     <!-- <input type="text" class="form-control form-control-sm txttext" id="txt_backup"
                                         value="" /> -->
                                 </div>
@@ -233,7 +255,8 @@
                                     <label> Conversão testada no Tag Assistant ? </label>
                                 </div>
                                 <div class="col-sm-5 col-md-4 mb-2 ms-0 ps-1">
-                                    <select class="form form-control form-control-sm txt_valid" id=" txt_testok" value=""></select>
+                                    <select class="form form-control form-control-sm txt_valid" id=" txt_testok"
+                                        value=""></select>
                                     <!-- <input type="text" class="form-control form-control-sm txttext" id="txt_testok"
                                         value="" /> -->
                                 </div>
@@ -324,12 +347,16 @@
                     </div>
                 </div>
 
+                <div class="opt Sforce d-none">
+                    <div id="optSforce"></div>
 
+                </div>
 
                 <div class="opt Mail d-none">
                     <div id="optEmail"></div>
 
                 </div>
+
 
                 <div class="opt WCriteria d-none m-3">
                     <h1>WinCriteria</h1>
@@ -393,7 +420,7 @@
                         <p>Siga as etapas de acordo com as opções: </p>
                     </div>
                     <br>
-                    <div class="row col-auto d-grid gap-1 px-5"> 
+                    <div class="row col-auto d-grid gap-1 px-5">
                         <div class=" border border-warning border-1 text-center qabox p-2 bg-light p-3" id="quizQA">
                             <div class="question">
                             </div>
@@ -404,6 +431,7 @@
 
 
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -414,6 +442,9 @@
 
 
     <script src="js/script.js" type="module"></script>
+    
+    <script src="js/sfScript.js" type="module"></script> 
+
 </body>
 
 </html>
