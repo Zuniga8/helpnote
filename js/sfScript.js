@@ -3,15 +3,17 @@
 //      btn menu preview 
 let SFform = document.querySelector('#SFformNote')
 let SFpreview = document.querySelector('.SFpreview')
-document.querySelector('#SFcheckPreview').addEventListener('click', function () {
-    if (SFpreview.classList.contains('d-none')) {
-        console.log('ok')
-        SFform.classList.toggle('d-none')
-        SFpreview.classList.toggle('d-none')
-        SFGerarNote()
-    } else {
-        SFform.classList.toggle('d-none')
-        SFpreview.classList.toggle('d-none')
+document.addEventListener('click', function(c){
+    if ( c.target.id == 'SFcheckPreview' ){
+        if (SFpreview.classList.contains('d-none')) {
+            console.log('ok')
+            SFform.classList.toggle('d-none')
+            SFpreview.classList.toggle('d-none')
+            SFGerarNote()
+        } else {
+            SFform.classList.toggle('d-none')
+            SFpreview.classList.toggle('d-none')
+        }
     }
 })
 
