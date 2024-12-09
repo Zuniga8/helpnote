@@ -114,9 +114,7 @@ document.querySelector('#checkPreview').addEventListener('click', function () {
 document.querySelector('#txt_subStatus').addEventListener('change', function (op) {
     document.querySelector('#txt_subStatus').setAttribute('value', op.target.value)
 })
-document.querySelector('.txt_valid').addEventListener('change', function (op) {
-    document.querySelector('.txt_valid').setAttribute('value', op.target.value)
-})
+ 
 
 //      Gera note
 function GerarNote() {
