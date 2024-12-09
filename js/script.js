@@ -128,10 +128,10 @@ function GerarNote() {
     form.querySelectorAll('div.row > div> label').forEach(function (lbl, id) {
         let registra = ''
         //console.log(id + '- ' + lbl.innerText)
-        if (id > 6 && id < 11) {
+        if (id > 3 && id < 7) {
             registra = "<br>" + form.querySelectorAll('textarea')[id - 7].value.replaceAll("\n", "<br>");
             x += 1
-        } else if (id == 12) {
+        } else if (id == 8) {
             document.querySelectorAll("[name='menuopt']").forEach(function (opt) {
                 if (opt.checked) {
                     registra = registra + '<br>' + opt.value
