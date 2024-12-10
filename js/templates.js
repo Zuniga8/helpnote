@@ -272,14 +272,12 @@ export const listBadleads = [
     "SPAM - Email Client"
 ]
 export const listSubStatus = [
-    "AS - Work in Progress",
     "AS - Reschedule 1 (ts as resched1)",
     "AS - Acceptable Reschedule (ts as reschedok)",
     "NI - Awaiting Inputs (ts ni ai)",
     "NI - In Consult (ts ni ic)",
     "NI - Awaiting Validation (ts ni av)",
     "NI - Attempted Contact (ts ni ac)",
-    "NI - Other (ts ni oth)",
     "IN - Infeasible (ts in inf)",
     "IN - Not Reachable (ts in nrch)",
     "IN - Not Interested (ts in ni)",
@@ -287,10 +285,13 @@ export const listSubStatus = [
     "IN - Out of Scope - Rerouted to Internal Team (ts in oost)",
     "IN - Out of Scope - Unable to Transfer (ts in oosu)",
     "IN - Out of Scope - Email to Seller (ts in oos seller)",
-    "IN - Other (ts in oth)",
-    "SO - Verified (ts so verif)",
+    "IN - Troubleshooting [Transferred] ",
+    "IN - Reschedule Limit Exceeded",
+    "SO - Implementation Only (ts so verif)",
     "SO - Verified No Recent Conversion (ts so verif nrc)",
     "SO - Unverified (ts so unv)",
-    "SO - Verification Not Needed (ts so vnn)"
+    "SO - Education Only (lg so oth)",
+    "SO - Troubleshooting Only (lg so oth)"
+
 ]
- 
+
